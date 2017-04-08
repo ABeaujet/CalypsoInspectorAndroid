@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:padding="20dip">
+
+    <TextView
+        android:text="Calypso Inspector lets you read the contents of public transport cards complying to the Calypso standard (http://www.calypsostandard.net)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:autoLink="web"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dip"/>
+
+    <TextView
+        android:text="This application is Free Software. You are free to use, copy, modify and redistribute this application according to the GNU Public Licence version 3.0."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/aboutLicence"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dip"/>
+
+    <TextView
+        android:text="All the sources can be found on this GitHub project page : http://github.com/ABeaujet/CalypsoInspectorAndroid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/aboutGithub"
+        android:autoLink="web"
+        android:textSize="18sp"/>
+</LinearLayout>

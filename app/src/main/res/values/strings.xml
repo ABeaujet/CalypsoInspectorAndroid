@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Calypso Inspector</string>
+    <string name="nfc_enabled">NFC is enabled !</string>
+    <string name="nfc_not_enabled">NFC is not enabled on this device !</string>
+    <string name="waiting_for_tag">Waiting for a tag…</string>
+    <string name="cannot_connect_isodep">Could not connect with isodep.</string>
+    <string name="card_found">Card found !</string>
+    <string name="not_implemented_yet1">This feature hasn\'t been implemented yet.</string>
+    <string name="not_implemented_yet2">Keep an eye on the GitHub repo, it might be coming soon.</string>
+    <string name="net_loaded_waiting_card">Network loaded, waiting for card...</string>
+    <string name="card_read_waiting">Card read. Waiting for card...</string>
+</resources>
