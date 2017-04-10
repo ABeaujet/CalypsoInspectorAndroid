@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
                             calypsoEnv.purgeFilesContents();
                             treeView.setAdapter(new CalypsoDumpListAdapter(context, new ArrayList<String>(), new HashMap<String, ArrayList<String>>()));
                             CalypsoRawDump dumpXML = new CalypsoRawDump(calypsoEnv);
-                            dumpXMLt init.loadXML(new XMLIOImpl(MainActivity.this, XMLIOImpl.XMLIOType.InternalStorage), dumps[which].getName());
+                            dumpXML.loadXML(new XMLIOImpl(MainActivity.this, XMLIOImpl.XMLIOType.InternalStorage), dumps[which].getName());
 
                             calypsoEnv.loadDump(dumpXML);
                             CalypsoDump dump = new CalypsoDump(calypsoEnv);
@@ -377,8 +377,9 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             if(isodep.isConnected()) {
-                // check if calypso card
                 OnboardIsoDepImpl iso = new OnboardIsoDepImpl(isodep);
+                // check if calypso card
+                /* This may be exclusive to PassPass cards. No documentation on that so let's remove it.
                 try {
                     byte[] rdata = iso.transmit(new CommandAPDU(new byte[]{0x00, 0x10, 0x00, 0x00, 0x00})).getData();
                     // rdata[45] : Celego 2D
@@ -393,7 +394,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 } catch (CardException e) {
                     Toast.makeText(this, "Error while checking if Calypso card", Toast.LENGTH_SHORT).show();
-                }
+                }*/
 
                 handleIsoDep(iso);
                 message.setText(getString(R.string.card_read_waiting));
