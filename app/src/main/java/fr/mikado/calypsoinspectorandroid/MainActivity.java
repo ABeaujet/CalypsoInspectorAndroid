@@ -337,7 +337,9 @@ public class MainActivity extends AppCompatActivity {
     private void handleIsoDep(IsoDepInterface iso){
         this.calypsoEnv.purgeFilesContents();
         try {
-            new CalypsoCard(iso, this.calypsoEnv).read();
+            CalypsoCard c = new CalypsoCard(iso, this.calypsoEnv);
+            c.read();
+            c.dump(false);
         } catch (CardException e) {
             System.out.println("Exception while reading : " + e.getMessage());
             Toast.makeText(this, "Don't move while I read the card !", Toast.LENGTH_SHORT).show();

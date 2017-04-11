@@ -85,11 +85,15 @@ public class CalypsoDump {
                 fare = "Error while decoding contract pointer. - Dog, probably.";
                 int farePointer = event.getSubfield("EventContractPointer").getBits().getInt();
                 int contractIndex = env.getContractIndex(farePointer);
-                if (contractIndex >= 0) {
-                    CalypsoRecord contract = contracts.getRecords().get(contractIndex);
-                    CalypsoRecordField contractBitmap = contract.getRecordField("PublicTransportContractBitmap");
-                    CalypsoRecordField contractType = contractBitmap.getSubfield("ContractType");
-                    fare = contractType.getConvertedValue();
+                if (contractIndex >= 0){
+                    if(contracts.getRecords().size() > contractIndex)
+                        fare = "Interrupted read";
+                    else{
+                        CalypsoRecord contract = contracts.getRecords().get(contractIndex);
+                        CalypsoRecordField contractBitmap = contract.getRecordField("PublicTransportContractBitmap");
+                        CalypsoRecordField contractType = contractBitmap.getSubfield("ContractType");
+                        fare = contractType.getConvertedValue();
+                    }
                 }
             }
 
